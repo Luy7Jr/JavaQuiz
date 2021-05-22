@@ -1,2 +1,8 @@
-var highscore = 0;
-var timeEl = document.querySelector(".time");
+var highscore = document.querySelector(".score");
+var timeEl = document.querySelector(".timer");
+var startButton = document.querySelector(".start-button");
+var answer = document.querySelector(".answer");
+
+var timer;
+
+
