@@ -1,19 +1,8 @@
-var highscore = document.querySelector(".Hscore");
-var timeEl = document.querySelector(".timer");
-var startBtn = document.querySelector(".start-button");
-var answer = document.querySelector(".answer");
-var question = document.querySelector(".question");
-var submitBtn = document.querySelector(".submit");
-var score = document.querySelector(".score");
 
-var score = 0:
-var timer = 60;
-var chosenAns = "";
-var highscoreCounter;
 
-function init(); {
-    getHighscore();
-}
+
+
+
 
 var interval = setInterval(function(){
   document.getElementById('timer').innerHTML=count;
@@ -64,6 +53,9 @@ var questions = [
   }
   
   document.write('<p>' + message + '</p>');
+
+
+  startButton.addEventListener("click", startGame);
   
 
 
