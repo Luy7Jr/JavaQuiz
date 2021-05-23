@@ -45,26 +45,26 @@ var viewScore = document.querySelector("#viewScore");
 var questions = [
     {
         question: "Arrays in a Javascript can be used to store?",
-        answers: [""],
-        correctAnswer: ""
+        answers: ["A) Arrays", "B) Loops", "C) Functions", "D) A list"],
+        correctAnswer: "D"
     },
 
     {
         question: "What is a string?",
-        answers: [""],
-        correctAnswer: ""
+        answers: ["A) An element between quotes", "B) A number", "C) True or False", "D) Loop"],
+        correctAnswer: "A"
     },
 
     {
         question: "What is a boolean?",
-        answers: [""],
-        correctAnswer: ""
+        answers: ["A) An element between quotes", "B) A number", "C) True or False", "D) Loop"],
+        correctAnswer: "C"
     },
-    
+
     {
         question: "What is a loop used for?",
-        answers: [""],
-        correctAnswer: ""
+        answers: ["A) Store data", "B) Used to perform the same action multiple times", "C) To store a number", "D) Store a Booleans"],
+        correctAnswer: "B"
     }
 
 ];
