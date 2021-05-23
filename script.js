@@ -171,6 +171,26 @@ function displayScores() {
     }
 }
 
+function clearScores() {
+    localStorage.clear();
+    scoreListEl.innerHTML="";
+}
+
+startButton.addEventListener("click", startQuiz);
+
+answerBtn.forEach(item => {
+    item.addEventListener("click", checkAnswer);
+});
+
+submitScore.addEventListener("click", addScore);
+
+restartBtn.addEventListener("click", function() {
+    highscoreEl.style.display = "none";
+    introEl.style.display = "block";
+    secondsLeft = 60;
+    timeEl.textContent = `Time:${secondsLeft}s`;
+});
+
 
 
 
