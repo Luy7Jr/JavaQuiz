@@ -44,3 +44,21 @@ ul.nobullets {
         outline: none;
         background-color: aqua;
     }
+
+    @media (max-width: 480px) {
+        body {
+            background-color: lightblue;
+        }
+    }
+    
+    @media (min-width: 481px) and (max-width: 1024px) {
+        body {
+            background-image: ;
+        }
+    }
+    
+    @media (min-width: 1025px) {
+        body {
+            background-image: ;
+       }
+    }
