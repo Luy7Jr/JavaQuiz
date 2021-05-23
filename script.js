@@ -14,7 +14,7 @@ var corWrongEl = document.querySelector("#corWrong");
 
 var finalEl = document.querySelector("#final");
 
-var initials = document.querySelector("#initials");
+var initialsInput = document.querySelector("#initials");
 
 var highscoreEl = document.querySelector("#highscores");
 
@@ -122,8 +122,46 @@ function checkAnswer(event) {
     setTimeout(function () {
         p.style.display = 'none';
     }, 1000);
+
+    if (questions[questionCount].correctAnswer === event.target.value) {
+        p.textContent ="Correct";
+    } else if (questions[questionCount].correctAnswer !== event.target.value) {
+        seconsLeft = secondsLeft - 10;
+        p.textContent = "Wrong";
+    }
+
+    if (questionCount < questions.length) {
+        question++;
+    }
+    setQuestion(questionCount);
 }
 
+function addScore(event) {
+    event.preventDefault();
+    finalEl.style.dispplay = "none";
+    highscoreEl.style.display = "block";
+
+    var init = initialsInput.value.toUpperCase();
+    scoreList.push({initials: init, score: secondsLeft });
+
+    scoreList = scoreList.sort((a, b) => {
+        if (a.score < b.score) {
+            return 1;
+        }   else {
+            return -1;
+        }
+    });
+
+    scoreListEl.innerHTML="";
+    for (let i = 0; i < scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        scoreListEl.append(li);
+    }
+
+    storeScores();
+    displayScores();
+}
 
 
 
