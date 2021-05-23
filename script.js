@@ -112,6 +112,18 @@ function setQuestion(id) {
     }
 }
 
+function checkAnswer(event) {
+    event.preventDefault();
+
+    corWrongEl.style.display = "block";
+    var p = document.createElement("p");
+    corWrongEl.appendChild(p);
+
+    setTimeout(function () {
+        p.style.display = 'none';
+    }, 1000);
+}
+
 
 
 
