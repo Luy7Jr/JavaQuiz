@@ -191,7 +191,17 @@ restartBtn.addEventListener("click", function() {
     timeEl.textContent = `Time:${secondsLeft}s`;
 });
 
+clearScore.addEventListener("click", clearScores);
 
+viewScore.addEventListener("click", function() {
+    if (highscoreEl.style.display === "none") {
+        highscoreEl.style.display = "block";
+    } else if (highscoreEl.style.display === "block") {
+        highscoreEl.style.display = "none";
+    }  else {
+        return alert("No Scores");
+    }
+});
 
 
 
