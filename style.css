@@ -23,3 +23,24 @@ footer {
     flex-shrink: 0;
     font-size: 8px;
 }
+
+#question,
+#final,
+#highscores,
+#corWrong {
+    display: none;
+}
+
+ul.nobullets {
+    list-style-type: none;
+    }
+
+    .answerBtn,
+    .answerBtn:hover,
+    .answerBtn:active,
+    .answerBtn:focus,
+    .answerBtn:active:focus {
+        box-shadow: none;
+        outline: none;
+        background-color: aqua;
+    }
