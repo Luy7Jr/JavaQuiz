@@ -16,6 +16,74 @@ var finalEl = document.querySelector("#final");
 
 var initials = document.querySelector("#initials");
 
+var highscoreEl = document.querySelector("#highscores");
+
+var scoreListEl = document.querySelector("#scorelist");
+
+var scoreList = [];
+
+var startButton = document.querySelector("#start");
+
+var answerBtn = document.querySelector("button.answerBtn");
+
+var answerBtn1 = document.querySelector("#ans1");
+
+var answerBtn2 = document.querySelector("#ans2");
+
+var answerBtn3 = document.querySelector("#ans3");
+
+var answerBtn4 = document.querySelector("#ans4");
+
+var submitScore = document.querySelector("#submitScore");
+
+var restartBtn = document.querySelector("#restart");
+
+var clearScore = document.querySelector("#clear");
+
+var viewScore = document.querySelector("#viewScore");
+
+var questions = [
+    {
+        question: "Arrays in a Javascript can be used to store?",
+        answers: [""],
+        correctAnswer: ""
+    },
+
+    {
+        question: "What is a string?",
+        answers: [""],
+        correctAnswer: ""
+    },
+
+    {
+        question: "What is a boolean?",
+        answers: [""],
+        correctAnswer: ""
+    },
+    
+    {
+        question: "What is a loop used for?",
+        answers: [""],
+        correctAnswer: ""
+    }
+
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
 
 
 
