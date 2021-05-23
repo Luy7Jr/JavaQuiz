@@ -12,5 +12,7 @@ var questionCount = 0;
 
 var corWrongEl = document.querySelector("#corWrong");
 
+var finalEl = document.querySelector("#final");
+
 
 
