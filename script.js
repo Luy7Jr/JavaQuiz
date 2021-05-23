@@ -34,6 +34,8 @@ var answerBtn3 = document.querySelector("#ans3");
 
 var answerBtn4 = document.querySelector("#ans4");
 
+var answerBtn5 = document.querySelector("#ans5");
+
 var submitScore = document.querySelector("#submitScore");
 
 var restartBtn = document.querySelector("#restart");
@@ -99,6 +101,16 @@ function startQuiz() {
     setQuestion(questionCount);
 }
 
+function setQuestion(id) {
+    if (id < questions.length) {
+        questionEl.textContent = questions[id].question;
+        answerBtn1.textContent = questions[id].answers[0];
+        answerBtn2.textContent = questions[id].answers[1];
+        answerBtn3.textContent = questions[id].answers[2];
+        answerBtn4.textContent = questions[id].answers[3];
+        answerBtn5.textContent = questions[id].answers[5];
+    }
+}
 
 
 
