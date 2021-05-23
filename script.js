@@ -90,6 +90,15 @@ function setTime() {
     }, 1000);
 }
 
+function startQuiz() {
+    introEl.style.display = "none";
+    questionsEl.style.display = "block";
+    questionCount = 0;
+
+    setTime();
+    setQuestion(questionCount);
+}
+
 
 
 
