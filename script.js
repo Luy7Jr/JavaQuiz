@@ -65,6 +65,13 @@ var questions = [
         question: "What is a loop used for?",
         answers: ["A) Store data", "B) Used to perform the same action multiple times", "C) To store a number", "D) Store a Booleans"],
         correctAnswer: "B"
+    },
+
+    {
+        question: "What is Javascript?",
+        answers: ["A) Programming language", "B) Word editor", "C) Photo editor", "D) Calculator"],
+        correctAnswer: "A"
+
     }
 
 ];
