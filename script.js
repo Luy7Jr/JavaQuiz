@@ -14,5 +14,9 @@ var corWrongEl = document.querySelector("#corWrong");
 
 var finalEl = document.querySelector("#final");
 
+var initials = document.querySelector("#initials");
+
+
+
 
 
