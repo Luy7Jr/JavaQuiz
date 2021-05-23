@@ -163,6 +163,16 @@ function addScore(event) {
     displayScores();
 }
 
+function displayScores() {
+    var storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+
+    if (storedScoreList !== null) {
+       scoreList = storedScoreList;
+    }
+}
+
+
+
 
 
 
