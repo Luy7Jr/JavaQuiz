@@ -1,10 +1,11 @@
-var timeEl = document.querySelector(".time");
+var timeEl = document.querySelector("p.time");
 var secondsLeft = 60;
 var scoreEl = document.querySelector("#score");
 
+
 var introEl = document.querySelector("#intro");
 
-var questionEl = document.querySelector("#questions");
+var questionsEl = document.querySelector("#questions");
 
 var questionEl = document.querySelector("#question");
 
@@ -12,83 +13,85 @@ var questionCount = 0;
 
 var corWrongEl = document.querySelector("#corWrong");
 
+
 var finalEl = document.querySelector("#final");
 
 var initialsInput = document.querySelector("#initials");
 
-var highscoreEl = document.querySelector("#highscores");
+var highscoresEl = document.querySelector("#highscores");
 
-var scoreListEl = document.querySelector("#scorelist");
+var scoreListEl = document.querySelector("#score-list");
 
 var scoreList = [];
 
-var startButton = document.querySelector("#start");
 
-var answerBtn = document.querySelector("button.answerBtn");
+var startBtn = document.querySelector("#start");
 
-var answerBtn1 = document.querySelector("#ans1");
+var ansBtn = document.querySelectorAll("button.ansBtn")
 
-var answerBtn2 = document.querySelector("#ans2");
+var ans1Btn = document.querySelector("#answer1");
 
-var answerBtn3 = document.querySelector("#ans3");
+var ans2Btn = document.querySelector("#answer2");
 
-var answerBtn4 = document.querySelector("#ans4");
+var ans3Btn = document.querySelector("#answer3");
 
-var answerBtn5 = document.querySelector("#ans5");
+var ans4Btn = document.querySelector("#answer4");
 
-var submitScore = document.querySelector("#submitScore");
+var submitScrBtn = document.querySelector("#submit-score");
 
-var restartBtn = document.querySelector("#restart");
+var goBackBtn = document.querySelector("#goback");
 
-var clearScore = document.querySelector("#clear");
+var clearScrBtn = document.querySelector("#clearscores");
 
-var viewScore = document.querySelector("#viewScore");
+var viewScrBtn = document.querySelector("#view-scores");
 
-var questions = [
+
+var questions = [ 
     {
-        question: "Arrays in a Javascript can be used to store?",
-        answers: ["A) Arrays", "B) Loops", "C) Functions", "D) A list"],
-        correctAnswer: "D"
+        question: "What is this primitive data type: TRUE OR FALSE?",
+        answers: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
+        correctAnswer: "2"
     },
-
     {
-        question: "What is a string?",
-        answers: ["A) An element between quotes", "B) A number", "C) True or False", "D) Loop"],
-        correctAnswer: "A"
+        question: "Primitive data type that is within quotes is a?",
+        answers: ["1. Boolean", "2. String", "3. Number", "4. Variable"],
+        correctAnswer: "2"
     },
-
     {
-        question: "What is a boolean?",
-        answers: ["A) An element between quotes", "B) A number", "C) True or False", "D) Loop"],
-        correctAnswer: "C"
+        question: "Arithmetic operators combine with ______ to form an expression that returns a single number",
+        answers: ["1. strings", "2. arrays", "3. numbers", "4. variables"],
+        correctAnswer: "3"
     },
-
     {
-        question: "What is a loop used for?",
-        answers: ["A) Store data", "B) Used to perform the same action multiple times", "C) To store a number", "D) Store a Booleans"],
-        correctAnswer: "B"
+        question: "What compares equality and type?",
+        answers: ["1. ===", "2. ==", "3. Strings", "4. <="],
+        correctAnswer: "1"
     },
-
     {
-        question: "What is Javascript?",
-        answers: ["A) Programming language", "B) Word editor", "C) Photo editor", "D) Calculator"],
-        correctAnswer: "A"
-
+        question: "Else if allows you to test more than one ________.",
+        answers: ["1. first", "2. loop", "3. terminal", "4. condition"],
+        correctAnswer: "4"
+    },
+    {
+        question: "What is Javascript for?",
+        answers: ["1. Calculating", "2. Programming Language", "3. Photo Editor", "4. Terminal"],
+        correctAnswer: "2"
     }
 
 ];
 
+
 function setTime() {
     var timerInterval = setInterval(function () {
-     secondsLeft--;
-     timeEl.textContent = `Time:${secondsLeft}s`;
-     
-     if (secondsLeft === 0 || questionCount === questions.length) {
-         clearInterval(timerInterval);
-         questionsEl.style.display = "none";
-         finalEl.style.display = "block";
-         scoreEl.textContent = secondsLeft;
-     }
+        secondsLeft--;
+        timeEl.textContent = `Time:${secondsLeft}s`;
+
+        if (secondsLeft === 0 || questionCount === questions.length) {
+            clearInterval(timerInterval);
+            questionsEl.style.display = "none";
+            finalEl.style.display = "block";
+            scoreEl.textContent = secondsLeft;
+        }
     }, 1000);
 }
 
@@ -101,20 +104,23 @@ function startQuiz() {
     setQuestion(questionCount);
 }
 
+
 function setQuestion(id) {
     if (id < questions.length) {
         questionEl.textContent = questions[id].question;
-        answerBtn1.textContent = questions[id].answers[0];
-        answerBtn2.textContent = questions[id].answers[1];
-        answerBtn3.textContent = questions[id].answers[2];
-        answerBtn4.textContent = questions[id].answers[3];
-        answerBtn5.textContent = questions[id].answers[5];
+        ans1Btn.textContent = questions[id].answers[0];
+        ans2Btn.textContent = questions[id].answers[1];
+        ans3Btn.textContent = questions[id].answers[2];
+        ans4Btn.textContent = questions[id].answers[3];
+        ans5Btn.textContent = questions[id].answers[4];
     }
 }
+
 
 function checkAnswer(event) {
     event.preventDefault();
 
+    
     corWrongEl.style.display = "block";
     var p = document.createElement("p");
     corWrongEl.appendChild(p);
@@ -124,99 +130,95 @@ function checkAnswer(event) {
     }, 1000);
 
     if (questions[questionCount].correctAnswer === event.target.value) {
-        p.textContent ="Correct";
+        p.textContent = "Correct!";
     } else if (questions[questionCount].correctAnswer !== event.target.value) {
-        seconsLeft = secondsLeft - 10;
-        p.textContent = "Wrong";
+        secondsLeft = secondsLeft - 10;
+        p.textContent = "Wrong!";
     }
 
     if (questionCount < questions.length) {
-        question++;
+        questionCount++;
     }
+   
     setQuestion(questionCount);
 }
 
 function addScore(event) {
     event.preventDefault();
-    finalEl.style.dispplay = "none";
-    highscoreEl.style.display = "block";
 
-    var init = initialsInput.value.toUpperCase();
-    scoreList.push({initials: init, score: secondsLeft });
+    finalEl.style.display = "none";
+    highscoresEl.style.display = "block";
 
+    let init = initialsInput.value.toUpperCase();
+    scoreList.push({ initials: init, score: secondsLeft });
+
+   
     scoreList = scoreList.sort((a, b) => {
         if (a.score < b.score) {
-            return 1;
-        }   else {
-            return -1;
+          return 1;
+        } else {
+          return -1;
         }
-    });
-
+      });
+    
     scoreListEl.innerHTML="";
-    for (let i = 0; i < scoreList.length; i++) {
-        let li = document.createElement("li");
+    for (var i = 0; i < scoreList.length; i++) {
+        var li = document.createElement("li");
         li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
         scoreListEl.append(li);
     }
 
+    
     storeScores();
     displayScores();
 }
 
+function storeScores() {
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+}
+
 function displayScores() {
+    
     var storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
 
     if (storedScoreList !== null) {
-       scoreList = storedScoreList;
+        scoreList = storedScoreList;
     }
 }
+
 
 function clearScores() {
     localStorage.clear();
     scoreListEl.innerHTML="";
 }
 
-startButton.addEventListener("click", startQuiz);
 
-answerBtn.forEach(item => {
-    item.addEventListener("click", checkAnswer);
+startBtn.addEventListener("click", startQuiz);
+
+
+ansBtn.forEach(item => {
+    item.addEventListener('click', checkAnswer);
 });
 
-submitScore.addEventListener("click", addScore);
 
-restartBtn.addEventListener("click", function() {
-    highscoreEl.style.display = "none";
+submitScrBtn.addEventListener("click", addScore);
+
+
+goBackBtn.addEventListener("click", function () {
+    highscoresEl.style.display = "none";
     introEl.style.display = "block";
     secondsLeft = 60;
     timeEl.textContent = `Time:${secondsLeft}s`;
 });
 
-clearScore.addEventListener("click", clearScores);
+clearScrBtn.addEventListener("click", clearScores);
 
-viewScore.addEventListener("click", function() {
-    if (highscoreEl.style.display === "none") {
-        highscoreEl.style.display = "block";
-    } else if (highscoreEl.style.display === "block") {
-        highscoreEl.style.display = "none";
-    }  else {
-        return alert("No Scores");
+viewScrBtn.addEventListener("click", function () {
+    if (highscoresEl.style.display === "none") {
+        highscoresEl.style.display = "block";
+    } else if (highscoresEl.style.display === "block") {
+        highscoresEl.style.display = "none";
+    } else {
+        return alert("No scores to show.");
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-]
-
-
-
-
