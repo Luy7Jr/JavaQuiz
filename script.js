@@ -1,14 +1,9 @@
+var introEl = document.querySelector("#intro");
 var timeEl = document.querySelector("p.time");
 var secondsLeft = 60;
-var scoreEl = document.querySelector("#score");
-
-
-var introEl = document.querySelector("#intro");
 
 var questionsEl = document.querySelector("#questions");
-
 var questionEl = document.querySelector("#question");
-
 var questionCount = 0;
 
 var corWrongEl = document.querySelector("#corWrong");
@@ -22,26 +17,17 @@ var highscoresEl = document.querySelector("#highscores");
 var scoreListEl = document.querySelector("#score-list");
 
 var scoreList = [];
-
+var scoreEl = document.querySelector("#score");
 
 var startBtn = document.querySelector("#start");
-
 var ansBtn = document.querySelectorAll("button.ansBtn")
-
 var ans1Btn = document.querySelector("#answer1");
-
 var ans2Btn = document.querySelector("#answer2");
-
 var ans3Btn = document.querySelector("#answer3");
-
 var ans4Btn = document.querySelector("#answer4");
-
 var submitScrBtn = document.querySelector("#submit-score");
-
 var goBackBtn = document.querySelector("#goback");
-
 var clearScrBtn = document.querySelector("#clearscores");
-
 var viewScrBtn = document.querySelector("#view-scores");
 
 
