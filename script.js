@@ -13,7 +13,6 @@ var questionCount = 0;
 
 var corWrongEl = document.querySelector("#corWrong");
 
-
 var finalEl = document.querySelector("#final");
 
 var initialsInput = document.querySelector("#initials");
@@ -50,34 +49,34 @@ var questions = [
     {
         question: "What is this primitive data type: TRUE OR FALSE?",
         answers: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
-        correctAnswer: "2"
+        correctAnswer: "1"
     },
     {
         question: "Primitive data type that is within quotes is a?",
         answers: ["1. Boolean", "2. String", "3. Number", "4. Variable"],
-        correctAnswer: "2"
+        correctAnswer: "1"
     },
     {
         question: "Arithmetic operators combine with ______ to form an expression that returns a single number",
         answers: ["1. strings", "2. arrays", "3. numbers", "4. variables"],
-        correctAnswer: "3"
+        correctAnswer: "2"
     },
     {
         question: "What compares equality and type?",
         answers: ["1. ===", "2. ==", "3. Strings", "4. <="],
-        correctAnswer: "1"
+        correctAnswer: "0"
     },
     {
         question: "Else if allows you to test more than one ________.",
         answers: ["1. first", "2. loop", "3. terminal", "4. condition"],
-        correctAnswer: "4"
+        correctAnswer: "3"
     },
     {
         question: "What is Javascript for?",
         answers: ["1. Calculating", "2. Programming Language", "3. Photo Editor", "4. Terminal"],
-        correctAnswer: "2"
+        correctAnswer: "1"
     }
-
+    
 ];
 
 
@@ -112,14 +111,12 @@ function setQuestion(id) {
         ans2Btn.textContent = questions[id].answers[1];
         ans3Btn.textContent = questions[id].answers[2];
         ans4Btn.textContent = questions[id].answers[3];
-        ans5Btn.textContent = questions[id].answers[4];
-    }
+    };
 }
 
 
 function checkAnswer(event) {
     event.preventDefault();
-
     
     corWrongEl.style.display = "block";
     var p = document.createElement("p");
@@ -149,7 +146,7 @@ function addScore(event) {
     finalEl.style.display = "none";
     highscoresEl.style.display = "block";
 
-    let init = initialsInput.value.toUpperCase();
+    var init = initialsInput.value.toUpperCase();
     scoreList.push({ initials: init, score: secondsLeft });
 
    

@@ -30,10 +30,33 @@ main {
     text-align: end;
 }
 
-#float {
-    display: inline-block;
-}
+#btn-group button {
+    margin-left: 150px;
+    border: 5px solid palevioletred;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 50px;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    float: left; 
+  }
+  
+  #btn-group button:not(:last-child) {
+    border-right: none; 
+  }
+  
+  #btn-group:after {
+    clear: both;
+    display: table;
+  }
 
+  #btn-group button:hover {
+    background-color: pink;
+  }
+
+  #corWrong {
+    margin-top: 150px;
+  }
 
 footer {
     flex-shrink: 0;
@@ -42,8 +65,7 @@ footer {
 
 #questions,
 #final,
-#highscores,
-#corWrong {
+#highscores {
     display: none;  
   } 
 
