@@ -1,5 +1,6 @@
 * {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: palevioletred;
 }
 
 html, body {
@@ -7,8 +8,7 @@ html, body {
 }
 
 body {
-    
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -17,7 +17,21 @@ body {
 }
 
 main {
+    margin-top: 250px;
     flex: 1 0 auto;
+    text-align: center;
+}
+
+#view-scores {
+    float: left;
+}
+
+#end {
+    text-align: end;
+}
+
+#float {
+    display: inline-block;
 }
 
 
@@ -29,7 +43,7 @@ footer {
 #questions,
 #final,
 #highscores,
-#yaynay {
+#corWrong {
     display: none;  
   } 
 
@@ -45,24 +59,24 @@ list-style-type: none;
 .ansBtn:active:focus {
     box-shadow: none;
     outline: none;
-    background-color: #28a745;
+    background-color: white;
 }
 
 
 @media (max-width: 480px) {
     body {
-        background-color: lightblue;
+        background-color: black;
     }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
     body {
-        background-image: url(../assets/images/markus-spiske-da7AMukpg2k-unsplash-med.jpg);
+        background-color: black;
     }
 }
 
 @media (min-width: 1025px) {
     body {
-	    background-image: url(../assets/images/markus-spiske-da7AMukpg2k-unsplash-med.jpg);
+	    background-color: black;
    }
 }
